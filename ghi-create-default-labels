@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ "$#" -ne 3 ]; 
+then
+  echo ""
+  echo "ERROR: Illegal number of parameters. Got $#, expecting 3."
+  echo "Example:"
+  echo "  ghi-create-default-lables <github_user> <github_pass> <github_org> <label_name>"
+  echo ""
+else
+  ./ghi-create-label-on-all-repos $1 $2 $3 testing e6e6e6
+  ./ghi-create-label-on-all-repos $1 $2 $3 task 207de5
+  ./ghi-create-label-on-all-repos $1 $2 $3 review e6e6e6
+  ./ghi-create-label-on-all-repos $1 $2 $3 ready e6e6e6
+  ./ghi-create-label-on-all-repos $1 $2 $3 priority-medium fad8c7
+  ./ghi-create-label-on-all-repos $1 $2 $3 priority-low fef2c0
+  ./ghi-create-label-on-all-repos $1 $2 $3 priority-high f7c6c7
+  ./ghi-create-label-on-all-repos $1 $2 $3 "in progress" e6e6e6
+  ./ghi-create-label-on-all-repos $1 $2 $3 blocked f6a6a6
+fi
+
+

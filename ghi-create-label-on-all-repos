@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ "$#" -ne 5 ]; 
+then
+  echo ""
+  echo "ERROR: Illegal number of parameters. Got $#, expecting 5."
+  echo "Example:"
+  echo "  ghi-create-label-on-all-repos <github_user> <github_pass> <github_org> <label_name> <label_hex_color>"
+  echo ""
+else
+ curl "https://$1:$2@api.github.com/orgs/$3/repos?per_page=200&page=1" | grep '"name"' | sed s/\"name\":\ \"// | sed s/\",// | tr -d " " | xargs -I {} -t ghi label "$4" -c $5 -- SamsungNYC/{}
+ curl "https://$1:$2@api.github.com/orgs/$3/repos?per_page=200&page=2" | grep '"name"' | sed s/\"name\":\ \"// | sed s/\",// | tr -d " " | xargs -I {} -t ghi label "$4" -c $5 -- SamsungNYC/{}
+fi
+
+
