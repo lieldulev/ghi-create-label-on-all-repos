@@ -26,5 +26,5 @@ Creates all the default labels I like on all organization's repositories:
 
 
 ```
-  ghi-create-default-lables <github_user> <github_pass> <github_org> <label_name>
+  ghi-create-default-lables <github_user> <github_pass> <github_org>
 ```

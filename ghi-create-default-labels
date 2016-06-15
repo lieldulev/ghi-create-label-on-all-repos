@@ -5,7 +5,7 @@ then
   echo ""
   echo "ERROR: Illegal number of parameters. Got $#, expecting 3."
   echo "Example:"
-  echo "  ghi-create-default-lables <github_user> <github_pass> <github_org> <label_name>"
+  echo "  ghi-create-default-lables <github_user> <github_pass> <github_org>"
   echo ""
 else
   ./ghi-create-label-on-all-repos $1 $2 $3 testing e6e6e6
